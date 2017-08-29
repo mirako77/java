@@ -9,6 +9,6 @@ public class JerseyService
     @GET
     public String getMsg()
     {
-         return "Manahona letsy an! - Jersey 2.x";
+         return "Manahona letsy an! - Jersey 2.5";
     }
 }
