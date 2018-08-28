@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+  <display-name>Citelum Proposal</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+<!--<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/web/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/login/*</url-pattern>
+	</servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>FormValidation</display-name>
+    <servlet-name>FormValidation</servlet-name>
+    <servlet-class>ghh.citelum.utils.FormValidation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FormValidation</servlet-name>
+    <url-pattern>/web/submit_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>UploadFileProject</display-name>
+    <servlet-name>UploadFileProject</servlet-name>
+    <servlet-class>ghh.citelum.utils.UploadFileProject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadFileProject</servlet-name>
+    <url-pattern>/web/uploadFileProject</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>services</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>org.plutext.htmleditor.JAXRS2Application</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>services</servlet-name>
+    <url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
+
+  <filter>
+    <display-name>ReservedAccessFilter</display-name>
+    <filter-name>ReservedAccessFilter</filter-name>
+    <filter-class>ghh.citelum.utils.ReservedAccessFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ReservedAccessFilter</filter-name>
+    <url-pattern>/ReservedAccessFilter</url-pattern>
+  </filter-mapping>
+
+<!--   <servlet>
+    <description></description>
+    <display-name>EmailServlet</display-name>
+    <servlet-name>EmailServlet</servlet-name>
+    <servlet-class>ghh.citelum.email.EmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmailServlet</servlet-name>
+    <url-pattern>/EmailServlet</url-pattern>
+  </servlet-mapping> -->
+</web-app>

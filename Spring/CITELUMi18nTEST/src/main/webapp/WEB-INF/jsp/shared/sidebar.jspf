@@ -1,0 +1,175 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!-- jQuery -->
+<script src="${pageContext.request.contextPath}/vendors/jquery/jquery-2.2.3/dist/jquery.min.js"></script>
+
+  <script>
+//var myVar = setInterval(myTimer, 5000);
+$( document ).ready(function() {
+//function myTimer() {
+	//console.log("ping");
+	jQuery.ajax({
+		url: '${pageContext.request.contextPath}/web/notificationUpdate${getCurrentUserId}',
+		type: "GET", 
+		success: function(request) { 
+			//console.log(request );
+			if (request == 0) {
+				$('.countDiv0').html(request);
+				}
+			else {
+				$('.countDiv').html(request);
+				}
+			}
+	 });
+	
+});
+</script>
+<div id="collapsable_sidebar" class = "collapse in">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0; height: auto">
+              <a href="#" class="site_title" style="height: auto;padding: 5px;width: auto;" id="citelum_logo_sidebar">
+              <img src="${pageContext.request.contextPath}/pictures/logo.png" style="max-height:60px; padding: 5px;width: 150px" title="Citelum"></a>
+              <div class="nav toggle" style="float: right">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+            </div>
+
+           <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile" style="height: 80px;">
+              <div class="profile_pic">
+                <img src="${pageContext.request.contextPath}/images/staff/${currentSessionCredentials.staff.picture_path}" alt="..." class="img-circle profile_img" style="height:44px; width:44px;">
+              </div>
+              <div class="profile_info">
+                <h2>${currentSessionCredentials.name }</h2>
+                <span>${currentSessionCredentials.permission.description }</span>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+<!--
+                <h3>General</h3>
+-->
+                
+                <ul class="nav side-menu">
+                  <li><a href="${pageContext.request.contextPath}/web/user_profile"><i class="fa fa-home"></i>Tableau de bord</a>
+<!--
+                    <ul class="nav child_menu">
+                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Dashboard2</a></li>
+                      <li><a href="#">Dashboard3</a></li>
+                    </ul>
+-->
+                  </li>
+                  
+<!--                  	User management -->
+						<!--     Check Logged user and his Permission -->
+						<c:choose>
+							<c:when test="${ currentSessionCredentials.permissionLevel <= globalAdminLevel}">
+			                  <li><a ><i class="fa fa-users"></i>Utilisateurs<span class="fa fa-chevron-down"></span></a>
+			                    <ul class="nav child_menu">
+			                      <li><a href="${pageContext.request.contextPath}/web/user_list">Liste des utilisateurs</a></li>
+			                    	<c:forEach items="${permissionsList }" var= "permission">
+			                      		<li><a href="${pageContext.request.contextPath}/web/user_list=${permission.id}">${permission.description}</a></li>
+			                    	</c:forEach>
+			                      <li><a href="${pageContext.request.contextPath}/web/user_create">Créer un utilisateur</a></li>
+			                      
+			                    </ul>
+			                  </li>
+							
+							</c:when>
+							<c:otherwise>
+							</c:otherwise>
+						</c:choose>
+						<!--                  END OF: User management -->
+						<!--   END Check Logged user and his Permission -->
+						
+						<!--     Check Logged user and his Permission -->
+						<c:choose>
+							<c:when test="${currentSessionCredentials.permissionLevel != localAdminLevel}">
+
+		                  <li><a><i class="fa fa-edit"></i>Projets<span class="fa fa-chevron-down"></span></a>
+		                    <ul class="nav child_menu">
+		                      <li><a href="${pageContext.request.contextPath}/web/project_list">Liste des projets</a></li>
+		                      <c:choose>
+									<c:when test="${ currentSessionCredentials.permissionLevel <= projectManagerLevel }">
+		                      			<li><a href="${pageContext.request.contextPath}/web/project_create">Créer un projet</a></li>  
+									</c:when>
+									<c:otherwise>
+									</c:otherwise>
+								</c:choose>
+		                    </ul>
+		                  </li>
+		                  
+		                  </c:when>
+									<c:otherwise>
+									</c:otherwise>
+						</c:choose>
+                  <!--     Check Logged user and his Permission -->
+					<c:choose>
+						<c:when test="${ currentSessionCredentials.permissionLevel <= localAdminLevel}">
+						
+		                  <li>
+			                  <a>
+			                  	<i class="fa fa-sitemap"></i>
+			                  	Librairie des contenus
+			                  	<span class="fa fa-chevron-down"></span>
+			                  </a>
+		                  	<ul class="nav child_menu">
+		                      <li><a href="${pageContext.request.contextPath}/web/project_template">Base documentaire</a></li>     
+		                    </ul>
+		                  </li>
+						</c:when>
+						<c:otherwise>
+						</c:otherwise>
+					</c:choose>
+					<!--   END Check Logged user and his Permission -->
+                  
+                  <c:choose>
+							<c:when test="${ currentSessionCredentials.permissionLevel <= contributeurLevel && currentSessionCredentials.permissionLevel != localAdminLevel}">
+                  
+                  <li><a href="${pageContext.request.contextPath}/web/notifications">
+                    	<i class="fa fa-envelope-o"></i>
+                    	New Notifications  
+                    	
+                    	<span class=countDiv0> </span>
+                    	<span class=countDiv  style="color: crimson ; font-weight: bold; font-size: 16px"> </span>
+                   
+                   </a>
+                  	
+                  </li> 
+                  
+                  </c:when>
+							<c:otherwise>
+							</c:otherwise>
+				</c:choose>             
+               </ul>
+              </div>
+			
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+
+            <!-- /menu footer buttons -->
+            <div style="position:fixed; left:10px; bottom:20px;">
+            	
+				Version: 				
+				<c:import var="data" 
+				          url="../../../projectVersion.txt"
+				          scope="session"/>
+				
+				<c:out value="${data}"/>
+
+            </div>
+          </div>
+        </div>
+</div>

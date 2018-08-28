@@ -1,0 +1,38 @@
+<span class="col-md-12" style="display:flex;">
+		<a href="${pageContext.request.contextPath}/web/project${getCurrentProjectId}_edit" title="Information du Projet" style="margin-right: 5px;">
+			<div style="background: #dad9d9; border-radius: 50%; width:40px; height: 40px; text-align:center; padding-top:13px;">
+			<i style="color: #373e4a;" class="entypo-info round-it"></i>
+			</div>
+		</a>
+	<!-- <img src="../template/production/images/img/chat.PNG" class="icon"/> -->
+	<!-- <img src="../template/production/images/img/attach.PNG" class="icon"/> -->
+<%-- 	<a href="${pageContext.request.contextPath}/web/project${getCurrentProjectId}_preview" title="Choisir les Fichiers de Projet" style="margin-right: 5px;">
+		<div style="background: #dad9d9; border-radius: 50%; width:40px; height: 40px; text-align:center; padding-top:13px;">
+			<i style="color: #373e4a;" class="entypo-flow-tree round-it"></i>
+		</div>
+	</a>
+
+	<a href="${pageContext.request.contextPath}/web/project${getCurrentProjectId}_addStaff" title="Ajouter des Personnes au Projet" style="margin-right: 5px;">
+		<div style="background: #dad9d9; border-radius: 50%; width:40px; height: 40px; text-align:center; padding-top:13px;">
+			<i style="color: #373e4a;" class="entypo-user-add"></i>
+		</div>
+	</a>
+
+	<a href="${pageContext.request.contextPath}/web/project${getCurrentProjectId}_assignTask" title="Attribuer des Tâches aux Personnes" style="margin-right: 5px;">
+		<div style="background: #dad9d9; border-radius: 50%; width:40px; height: 40px; text-align:center; padding-top:13px;">
+			<i style="color: #373e4a;" class="entypo-users round-it"></i>
+		</div>
+	</a>
+
+	<a href="${pageContext.request.contextPath}/web/project${getCurrentProjectId}"	title="Modifier le document" style="margin-right: 5px;">
+		<div style="background: #dad9d9; border-radius: 50%; width:40px; height: 40px; text-align:center; padding-top:13px;">
+			<i style="color: #373e4a;" class="entypo-doc-text-inv"></i>
+		</div>
+	</a>  --%>
+
+	<!-- <img src="../template/production/images/img/export.PNG" class="icon"/> -->
+	<!-- <img src="../template/production/images/img/lock.PNG" class="icon"/> -->
+	<!-- <img src="../template/production/images/img/lock-open.PNG" class="icon"/> -->
+</span>
+<br>
+<br>

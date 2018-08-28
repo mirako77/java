@@ -1,0 +1,245 @@
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<form:form id="demo-form2" name="createProjectForm"
+	class="form-horizontal form-label-left" action="${addAction}"
+	method="POST" commandName="user">
+	<div class="container">
+		
+		<!-- Loguin div -->
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="first-name">Login <span
+				class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+<!-- 													<div class="col-md-12 col-sm-12 col-xs-12">${message}</div> -->
+
+				<c:choose>
+				    <c:when test="${!empty inputUserLogin }">
+				        <form:input type="text" name="user_name" id="login"
+					class="form-control col-md-7 col-xs-12" path="login" value="${inputUserLogin}"  required="required"/>
+				    </c:when>
+				    <c:otherwise>
+						<form:input type="text" name="user_name" id="login"
+							class="form-control col-md-7 col-xs-12" path="login" value="${user.login}"  required="required"/>
+				    </c:otherwise>
+				</c:choose>
+
+			</div>
+		</div>
+			<div class="row">
+			<c:if test="${!empty userLoginEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${userLoginEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty userLoginInvalidMessageIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${userLoginInvalidMessageIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+
+		</div>
+		<!--  line Break -->
+		<div class="ln_solid"></div>
+		<!--  line Break -->
+		<!-- Nom div -->
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="first-name">Nom <span
+				class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+<!-- 													<div class="col-md-12 col-sm-12 col-xs-12">${message}</div> -->
+
+				<c:choose>
+				    <c:when test="${!empty inputUserName }">
+				        <form:input type="text" name="user_name" id="first-name"
+					class="form-control col-md-7 col-xs-12" path="name" value="${inputUserName}"  required="required"/>
+				    </c:when>
+				    <c:otherwise>
+						<form:input type="text" name="user_name" id="first-name"
+							class="form-control col-md-7 col-xs-12" path="name" value="${user.name}"  required="required"/>
+				    </c:otherwise>
+				</c:choose>
+
+			</div>
+		</div>
+			<div class="row">
+			<c:if test="${!empty userNameEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${userNameEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty userNameInvalidMessageIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${userNameInvalidMessageIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+
+		</div>
+		
+		<!--  line Break -->
+		<div class="ln_solid"></div>
+		<!--  line Break -->
+		<!-- Email div -->
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="first-name">Email <span
+				class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+<!-- 													<div class="col-md-12 col-sm-12 col-xs-12">${message}</div> -->
+
+				<c:choose>
+				    <c:when test="${!empty inputEmail }">
+				        <form:input type="text" name="user_email" id="first-name"
+					class="form-control col-md-7 col-xs-12" path="email" value="${inputUserEmail}"  required="required"/>
+				    </c:when>
+				    <c:otherwise>
+						<form:input type="text" name="user_email" id="first-name"
+							class="form-control col-md-7 col-xs-12" path="email" value="${user.email}"  required="required"/>
+				    </c:otherwise>
+				</c:choose>
+
+			</div>
+		</div>
+			<div class="row">
+			<c:if test="${!empty userEmailEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${userNameEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty userEmailInvalidMessageIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${userNameInvalidMessageIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+
+		</div>
+		
+		<!--  line Break -->
+		<div class="ln_solid"></div>
+		<!--  line Break -->
+		<div class="form-group row">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Pays <span class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<c:choose>
+				    <c:when test="${!empty inputCountry }">
+				        <form:input rows="5" name ="country" id="previousInputDescription" class="form-control col-md-7 col-xs-12" path="country" value="${inputCountry}" required="required" style="max-width: 100%;"/>
+				    </c:when>
+				    <c:otherwise>
+						<form:input rows="5" name ="country" id="databaseDescription" class="form-control col-md-7 col-xs-12" path="country" required="required" value="${user.country}" style="max-width: 100%;"/>
+				    </c:otherwise>
+				</c:choose>
+			</div>
+		</div>
+		<div class="row">
+			<c:if test="${!empty countryEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${countryEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty invalidCountryIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${invalidCountryIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+<%-- 			<c:if test="${!empty inputCountry}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-warning" style="height:100%;">
+					You have entered:
+					<br>
+					${inputCountry}
+				</div>
+			</c:if> --%>
+		</div>
+
+		<!--  line Break -->
+		<!--  line Break
+		<br/>
+		<div class="ln_solid"></div>
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="last-name">Upload Image</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<input class=" col-md-7 col-xs-12" type="file"
+					accept="image/*" style="padding-top: 8px;">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="last-name">Upload File</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<input class=" col-md-7 col-xs-12" type="file"
+					style="padding-top: 8px;">
+			</div>
+		</div>
+		-->
+		<div class="ln_solid"></div>
+		<div class="form-group row">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Role
+				<span class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<select name = formPermissions>
+					<c:forEach items="${listPermissions}" var="permission">
+						<c:if test="${permission.id >= currentSessionCredentials.permission.id}">
+							<option id="permissions" path="permissions" value="${permission.id}" ${permission.id == user.permissions.id ? 'selected="selected"' : ''}>${permission.description}</option>
+				  		</c:if>
+				    </c:forEach>
+				</select>
+<%--
+				<c:choose>
+					<c:when test="${!empty inputPermissions }">
+						<form:input id="permissions" type="text" required="required" class="form-control col-md-7 col-xs-12" path="permissions" name="permissions" title="Click here to choose permissions" value="${inputPermissions}"/>
+					</c:when>
+				    <c:otherwise>
+						<form:input id="permissions" type="text" required="required" class="form-control col-md-7 col-xs-12" path="permissions" name="permissions" title="Click here to choose permissions" value="${user.permissions.role}"/>
+				    </c:otherwise>
+				</c:choose>
+					 --%>
+			</div>
+		</div>
+		<div class="row">
+			<c:if test="${!empty permissionsEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${permissionsEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty invalidPermissionsIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${invalidPermissionsIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+			<c:if test="${!empty existentUser}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${existentUser}
+				</div>
+			</c:if>
+		</div>
+
+		<div class="ln_solid"></div>
+		<div class="form-group">
+			<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				<button type="submit" class="btn btn-primary btnForm">Valider</button>
+
+			</div>
+		</div>
+	</div>
+	<c:if test="${!empty getUserEditId}">
+	<form:input id="id_hidden" type="hidden" class="form-control col-md-7 col-xs-12" path="id" name="id" value="${getCurrentUserId}"/>
+	</c:if>
+</form:form>

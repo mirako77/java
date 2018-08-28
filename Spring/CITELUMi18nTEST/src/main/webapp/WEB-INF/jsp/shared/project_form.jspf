@@ -1,0 +1,146 @@
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> --%>
+
+<form:form id="demo-form2" name="createProjectForm"
+	class="form-horizontal form-label-left" action="${addAction}"
+	method="POST" commandName="projects">
+	<div class="container">
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="first-name">Titre du projet <span
+				class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+<!-- 													<div class="col-md-12 col-sm-12 col-xs-12">${message}</div> -->
+				<c:if test="${!empty inputProjectName }">
+				
+				</c:if>
+				
+				<c:choose>
+				    <c:when test="${!empty inputProjectName }">
+				        <form:input type="text" name="project_name" id="first-name"
+					class="form-control col-md-7 col-xs-12" path="title" value="${inputProjectName}"  required="required"/>
+				    </c:when>    
+				    <c:otherwise>
+						<form:input type="text" name="project_name" id="first-name"
+							class="form-control col-md-7 col-xs-12" path="title" value="${getCurrentProjectName}"  required="required"/>
+				    </c:otherwise>
+				</c:choose>
+				
+			</div>
+		</div>
+			<div class="row">
+			<c:if test="${!empty titleEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${titleEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty titleInvalidMessageIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${titleInvalidMessageIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+			
+		</div>
+		<!--  line Break -->
+		<div class="ln_solid"></div>
+		<!--  line Break -->
+		<div class="form-group row">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Description <span class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<c:choose>
+					    <c:when test="${!empty inputProjectDescription }">
+					        <form:textarea rows="5" name ="project_description" id="previousInputDescription" class="form-control col-md-7 col-xs-12" path="description" required="required" style="max-width: 100%;"/>
+					    </c:when>    
+					    <c:otherwise>
+							<form:textarea rows="5" name ="project_description" id="databaseDescription" class="form-control col-md-7 col-xs-12" path="description" required="required" style="max-width: 100%;"/>
+					    </c:otherwise>
+					</c:choose>
+					
+				<!-- <form:textarea rows="5" id="editDescription" name ="project_description" class="form-control col-md-7 col-xs-12" path="description" required="required" style="max-width: 100%;"/> -->
+			</div>
+		</div>
+		
+		<div class="row">
+			<c:if test="${!empty descriptionEmptyMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${descriptionEmptyMessage}
+				</div>
+			</c:if>
+			<c:if test="${!empty invalidDescriptionIntro}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${invalidDescriptionIntro}
+					<br>
+					${invalidChars}
+				</div>
+			</c:if>
+<%-- 			<c:if test="${!empty inputProjectDescription}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-warning" style="height:100%;">
+					You have entered:
+					<br>
+					${inputProjectDescription}										
+				</div>
+			</c:if> --%>
+		</div>
+			
+		<!--  line Break -->
+		<!--  line Break 
+		<br/>
+		<div class="ln_solid"></div>
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="last-name">Upload Image</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<input class=" col-md-7 col-xs-12" type="file"
+					accept="image/*" style="padding-top: 8px;">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12"
+				for="last-name">Upload File</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<input class=" col-md-7 col-xs-12" type="file"
+					style="padding-top: 8px;">
+			</div>
+		</div>
+		-->
+		<div class="ln_solid"></div>
+		<div class="form-group row">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Deadline
+			<span class="required">*</span>
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<c:choose>
+					<c:when test="${!empty invalidDeadlineMessage }">
+						<form:input id="deadline" type="text" required="required" class="form-control col-md-7 col-xs-12" path="deadline" name="deadline" title="Click here to choose a date" value="${getCurrentDeadline}"/>
+					</c:when>    
+				    <c:otherwise>
+						<form:input id="deadline" type="text" required="required" class="form-control col-md-7 col-xs-12" path="deadline" name="deadline" title="Click here to choose a date" value="${getCurrentDeadline}"/>			    	
+				    </c:otherwise>
+				</c:choose>
+					
+			</div>
+		</div>
+		<div class="row">
+			<c:if test="${!empty invalidDeadlineMessage}">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3 alert alert-danger">
+					${invalidDeadlineMessage}
+				</div>
+			</c:if>
+		</div>
+		
+		<div class="ln_solid"></div>
+		<div class="form-group">
+			<div hidden=true class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				<button type="submit" class="btn btn-primary btnForm">Save and continue</button>
+				
+			</div>
+		</div>
+	</div>
+	<c:if test="${!empty getCurrentProjectId}">
+	<form:input id="id_hidden" type="hidden" class="form-control col-md-7 col-xs-12" path="id" name="id" value="${getCurrentProjectId}"/>
+	</c:if>
+</form:form>

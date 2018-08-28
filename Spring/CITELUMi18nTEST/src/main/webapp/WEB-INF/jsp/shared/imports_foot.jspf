@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!-- jQuery -->
+<script src="${pageContext.request.contextPath}/vendors/jquery/jquery-2.2.3/dist/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="${pageContext.request.contextPath}/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- FastClick -->
+<script src="${pageContext.request.contextPath}/vendors/fastclick/lib/fastclick.js"></script>
+
+<!-- NProgress -->
+<script src="${pageContext.request.contextPath}/vendors/nprogress/nprogress.js"></script>
+
+<!-- bootstrap-progressbar -->
+<script src="${pageContext.request.contextPath}/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="${pageContext.request.contextPath}/scripts/custom.js"></script>
+<script src="${pageContext.request.contextPath}/scripts/template_manipulation.js"></script>
+
+<!-- Confirm Bootstrap 3 -->
+<script src="${pageContext.request.contextPath}/scripts/confirm-bootstrap.js"></script>

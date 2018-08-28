@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!-- Bootstrap -->
+<link href="${pageContext.request.contextPath}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="${pageContext.request.contextPath}/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="${pageContext.request.contextPath}/style/custom.css" rel="stylesheet">
+
+<!-- Entypo Icons -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/vendors/entypo/css/entypo.css">
+
+
+<!-- *****	Pre-jspRefactor hrefs ****** -->
+<!-- Bootstrap -->
+
+<!--
+    <link href="../template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
+
+<!-- Font Awesome -->
+<!--
+    <link href="../template/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	-->
+	
+	<!-- Custom Theme Style -->
+	<!--
+    <link href="../template/build/css/custom.css" rel="stylesheet">
+    <link href="../../style/styles.css" rel="stylesheet">
+    -->
