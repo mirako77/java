@@ -1,0 +1,84 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<!-- scan de service -->
+	<!--  context:component-scan base-package="net.mickanel.services" /-->
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>accueil</value>
+				<!-- value>lesExceptions</value -->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Appel fichier prop -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:accueil.properties"/>
+	</bean>
+
+	<!-- Pour conversion des dates -->
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean"/>
+	
+	<!-- Acteur -->
+	<bean id="Richard" class="net.mickanel.business.ActeurImpl" scope="prototype">
+		<property name="nom" value="${user.nom}"></property>
+		<property name="prenom" value="${user.prenom}"></property>
+	</bean>
+	
+	<!-- Acteur par constructeur -->
+	<bean id="acteurPrincipale" class="net.mickanel.business.ActeurImpl" scope="prototype">
+		<constructor-arg value="de funes"/>
+	</bean>
+
+	<!-- Film -->
+	<bean id="soupe" class="net.mickanel.business.Film" 
+		p:titre="La soupe au choux" 
+		p:dateDeSortie="22-01-2011"
+		p:acteurPrincipale-ref="acteurPrincipale">
+		<property name="acteursSecondaires">
+			<set>
+				<bean class="net.mickanel.business.ActeurImpl">
+					<property name="nom" value="seagale" />
+					<property name="prenom" value="steven" />
+				</bean>
+			</set>
+		</property>
+	</bean>
+			
+	<bean id="ActeurFactory" class="net.mickanel.business.ActeurFactory"/>
+	<bean id="jamesBond" factory-bean="ActeurFactory" factory-method="getDefaultActeur"/>
+	
+	<bean id="Bond" class="net.mickanel.business.Film">
+		<property name="acteurPrincipale" ref="jamesBond"></property>
+		<property name="titre" value="demain ne suffit pas"></property>
+	</bean>
+	
+
+	<!-- 
+			DAO - - avec Hibernate 
+	 -->
+	<bean id="acteurDAO" class="net.mickanel.dao.ActeurHibernateDAO">
+		<property name="sessionFactory" ref="hibSessionFactory"/>
+	</bean>
+	
+	<!-- 
+		SERVICE
+	 -->
+	<bean id="acteurService" class="net.mickanel.services.ActeurService">
+		<property name="acteurDAO" ref="acteurDAO"></property>
+	</bean>
+	
+</beans>

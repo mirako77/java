@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+<!-- utilise les contextes Annotation -->
+<!--  context:annotation-config></context:annotation-config-->
+
+<!-- Parcour les annotations dans le package spécifié -->
+<context:component-scan base-package="net.mickanel.controller"></context:component-scan>
+
+	<!-- bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" /-->
+		
+	<!-- Plus besoin a cause des annotations -->
+	<!-- bean name="/sayHello.do" class="com.mrako.mrako.HelloController"/-->
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/pages/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<mvc:annotation-driven/>
+
+</beans>

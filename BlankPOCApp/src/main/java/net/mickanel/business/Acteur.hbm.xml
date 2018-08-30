@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.mickanel.business.ActeurImpl" table="ACTEUR">
+        <id name="identifiant" type="int">
+            <column name="IDENTIFIANT" />
+            <generator class="identity" />
+        </id>
+        <property name="nom" type="string">
+            <column name="NOM" not-null="true" />
+    	</property>
+    	<property name="prenom" type="string">
+            <column name="PRENOM" not-null="false" />
+    	</property>
+    </class>
+   
+</hibernate-mapping>
