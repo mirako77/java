@@ -17,7 +17,7 @@ public class ActeurHibernateDAO extends HibernateDaoSupport implements ActeurDAO
 	public Collection<ActeurImpl> findAllActors() throws DataAccessException {
 		return (Collection<ActeurImpl>) getHibernateTemplate().find( "select NOM, PRENOM from ACTEUR", new ActeurMapper());
 	}
-	
+
 	class ActeurMapper implements RowMapper<ActeurImpl> {
 		public ActeurImpl mapRow(ResultSet rs, int rowNum) throws SQLException {
 		ActeurImpl p = new ActeurImpl();

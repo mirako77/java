@@ -13,21 +13,21 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 <!-- utilise les contextes Annotation -->
 <!--  context:annotation-config></context:annotation-config-->
 
-<!-- Parcour les annotations dans le package spécifié -->
+<!-- Parcours les annotations dans le package spécifié -->
 <context:component-scan base-package="net.mickanel.controller"></context:component-scan>
 
 	<!-- bean id="handlerMapping"
 		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" /-->
-		
+
 	<!-- Plus besoin a cause des annotations -->
 	<!-- bean name="/sayHello.do" class="com.mrako.mrako.HelloController"/-->
-	
+
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 		<property name="prefix" value="/pages/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
-	
+
 	<mvc:annotation-driven/>
 
 </beans>

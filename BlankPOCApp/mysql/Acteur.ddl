@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS `tmp`.`acteur`;
-CREATE TABLE  `tmp`.`acteur` (
+DROP TABLE IF EXISTS `pocbase`.`acteur`;
+
+CREATE TABLE  `pocbase`.`acteur` (
   `IDENTIFIANT` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `NOM` varchar(100) NOT NULL,
   `PRENOM` varchar(100) NOT NULL,

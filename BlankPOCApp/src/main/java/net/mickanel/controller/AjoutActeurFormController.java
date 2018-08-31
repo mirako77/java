@@ -20,7 +20,7 @@ public class AjoutActeurFormController{
 	private static Logger log = Logger.getLogger(AjoutActeurFormController.class);
 
 	public AjoutActeurFormController(){
-		log.info("AjoutActeurFormController: ------control");
+		log.info("Constructeur AjoutActeurFormController ...");
 	}
 
 

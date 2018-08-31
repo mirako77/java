@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.mickanel</groupId>
@@ -11,10 +13,9 @@
 
 	<properties>
 		<java-version>1.8</java-version>
-		<spring.version>4.3.4.RELEASE</spring.version>
-
+		<spring.version>3.2.9.RELEASE</spring.version>
 		<!-- persistence -->
-        <hibernate.version>3.6.10.Final</hibernate.version>
+        <hibernate.version>4.3.6.Final</hibernate.version>
         <!-- javassist.version>3.21.0-GA</javassist.version -->
         <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
         <tomcat-dbcp.version>7.0.73</tomcat-dbcp.version>
@@ -45,16 +46,16 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
-		</dependency
+		</dependency>
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-hibernate3</artifactId>
 		    <version>2.0.8</version>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -101,7 +102,6 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -130,7 +130,7 @@
 		<finalName>BlankPOCApp</finalName>
 		<plugins>
 			<plugin>
-				<!--groupId>org.apache.maven.plugins</groupId -->
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 				<configuration>
