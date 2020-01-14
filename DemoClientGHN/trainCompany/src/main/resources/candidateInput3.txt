@@ -1,0 +1,69 @@
+{
+  "taps" :
+   [ 
+   	 {  "unixTimestamp" : 1,
+	    "customerId" : 1,
+	    "station" : "A"
+	  }, {
+	    "unixTimestamp" : 2,
+	    "customerId" : 1,
+	    "station" : "D"
+	  }, {
+	    "unixTimestamp" : 2,
+	    "customerId" : 2,
+	    "station" : "B"
+	  }, {
+	    "unixTimestamp" : 3,
+	    "customerId" : 2,
+	    "station" : "C"
+	  }, {
+	    "unixTimestamp" : 3,
+	    "customerId" : 3,
+	    "station" : "H"
+	  }, {
+	    "unixTimestamp" : 3,
+	    "customerId" : 2,
+	    "station" : "H"
+	  }, {
+	    "unixTimestamp" : 10,
+	    "customerId" : 2,
+	    "station" : "G"
+	  }, {
+	    "unixTimestamp" : 20,
+	    "customerId" : 2,
+	    "station" : "D"
+	  }, {
+	    "unixTimestamp" : 27,
+	    "customerId" : 3,
+	    "station" : "E"
+	  }, {
+	    "unixTimestamp" : 30,
+	    "customerId" : 3,
+	    "station" : "E"
+	  }, {
+	    "unixTimestamp" : 35,
+	    "customerId" : 3,
+	    "station" : "A"
+	  }, {
+	    "unixTimestamp" : 41,
+	    "customerId" : 4,
+	    "station" : "A"
+	  }, {
+	    "unixTimestamp" : 47,
+	    "customerId" : 4,
+	    "station" : "I"
+	  }, {
+	    "unixTimestamp" : 65,
+	    "customerId" : 2,
+	    "station" : "F"
+	  }, {
+	    "unixTimestamp" : 70,
+	    "customerId" : 4,
+	    "station" : "E"
+	  }, {
+	    "unixTimestamp" : 81,
+	    "customerId" : 4,
+	    "station" : "F"
+	  } 
+  ]
+}

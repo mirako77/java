@@ -1,0 +1,92 @@
+{
+	"CustomerSummaries": {
+		"1": {
+			"customerId": 1,
+			"totalCostInCents": null,
+			"voyages": [
+				{
+					"stationStart": "A",
+					"stationEnd": "D",
+					"startedJourneyAt": "1",
+					"costInCents": "240",
+					"zoneFrom": "1",
+					"zoneTo": "2"
+				}
+			]
+		},
+		"2": {
+			"customerId": 2,
+			"totalCostInCents": null,
+			"voyages": [
+				{
+					"stationStart": "B",
+					"stationEnd": "C",
+					"startedJourneyAt": "2",
+					"costInCents": "240",
+					"zoneFrom": "1",
+					"zoneTo": "2"
+				},
+				{
+					"stationStart": "H",
+					"stationEnd": "G",
+					"startedJourneyAt": "3",
+					"costInCents": "100",
+					"zoneFrom": "4",
+					"zoneTo": "4"
+				},
+				{
+					"stationStart": "D",
+					"stationEnd": "F",
+					"startedJourneyAt": "20",
+					"costInCents": "280",
+					"zoneFrom": "2",
+					"zoneTo": "3"
+				}
+			]
+		},
+		"3": {
+			"customerId": 3,
+			"totalCostInCents": null,
+			"voyages": [
+				{
+					"stationStart": "H",
+					"stationEnd": "E",
+					"startedJourneyAt": "3",
+					"costInCents": "200",
+					"zoneFrom": "4",
+					"zoneTo": "3"
+				},
+				{
+					"stationStart": "E",
+					"stationEnd": "A",
+					"startedJourneyAt": "30",
+					"costInCents": "240",
+					"zoneFrom": "2",
+					"zoneTo": "1"
+				}
+			]
+		},
+		"4": {
+			"customerId": 4,
+			"totalCostInCents": null,
+			"voyages": [
+				{
+					"stationStart": "A",
+					"stationEnd": "I",
+					"startedJourneyAt": "41",
+					"costInCents": "300",
+					"zoneFrom": "1",
+					"zoneTo": "4"
+				},
+				{
+					"stationStart": "E",
+					"stationEnd": "F",
+					"startedJourneyAt": "70",
+					"costInCents": "280",
+					"zoneFrom": "2",
+					"zoneTo": "3"
+				}
+			]
+		}
+	}
+}
