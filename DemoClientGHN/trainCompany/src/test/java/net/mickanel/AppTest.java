@@ -35,7 +35,7 @@ public class AppTest
     }
 
     /**
-     * Vérification du cout d'un voyage de zone 1 a 2
+     * Vérification du cout d'un voyage de zone 1 a 2 etc ...
      */
     public void testAppZone1To2()
     {
@@ -53,7 +53,7 @@ public class AppTest
     	Voyage v01 = new Voyage(
     				"A", "E", "1572244200", "", "2", "2");
     	String cost = Utils.calculatePriceOfVoyageInCents(v01.getZoneFrom(), v01.getZoneTo());
-        assertTrue( cost.equalsIgnoreCase("SameZone") );
+        assertTrue( cost.equalsIgnoreCase("100") );
     }
     
     /**
@@ -72,4 +72,21 @@ public class AppTest
     	Utils.calculateGlobalPriceOfVoyagePerCustomer(custSumD);
         assertTrue( custSumD.getTotalCostInCents().equalsIgnoreCase("480") );
     }
+    
+    /**
+     * Vérification du cout d'un voyage de méme zone
+     */
+    public void testupdateTotalCostInCent()
+    {
+    	CustomerSummariesDetail custSumD = new CustomerSummariesDetail(1,"240",null);
+    	Voyage v01 = new Voyage("A", "D", "1572244200", "240", "1", "2");
+    	List<Voyage> vList = new ArrayList<Voyage>();
+    	vList.add(v01);
+    	custSumD.setVoyages(vList);
+    	
+    	Utils.updateTotalCostInCent(custSumD, "240");
+    	
+    	assertEquals(custSumD.getTotalCostInCents(), "480");
+    }
+    
 }

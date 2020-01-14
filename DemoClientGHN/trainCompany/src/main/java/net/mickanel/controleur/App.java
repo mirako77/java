@@ -52,6 +52,7 @@ public class App {
 				if (null == custSum.getCustomerSummariesDetailList() ) {
 					custSumDet = new CustomerSummariesDetail();
 					custSumDet.setCustomerId(currentStepID);
+					custSumDet.setTotalCostInCents("0");
 					//initialisation du détail d'un client
 					initCustSumDetVoyage(custSum, custSumDet, currentStep);
 				} else {
@@ -99,6 +100,7 @@ public class App {
 					String costInCents = Utils.calculatePriceOfVoyageInCents(newVoyage.getZoneFrom(),
 							newVoyage.getZoneTo());
 					newVoyage.setCostInCents(costInCents); // maj du cout
+					Utils.updateTotalCostInCent(custSummDetail,costInCents);
 					vListTmp.set(index, newVoyage); // maj de l'entrée
 					// On calcul le cout si celui ci n'est pas renseigné  car le trajet A/R est clot
 				} else { // On crée un autre voyage sinon
@@ -108,6 +110,7 @@ public class App {
 					vListTmp.add(index + 1, newVoyage);
 				}
 			}
+	
 	/**
 	 *  Initialisation du détail des voyages du client
 	 * 
@@ -131,6 +134,7 @@ public class App {
 			custSumDet = new CustomerSummariesDetail();
 			custSumDet.setVoyages(vList);
 			custSumDet.setCustomerId(currentStep.getCustomerId());
+			custSumDet.setTotalCostInCents("0");
 			custSum.getCustomerSummariesDetailList().put(Integer.valueOf(currentStep.getCustomerId()), custSumDet);
 		}
 	}

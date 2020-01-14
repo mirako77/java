@@ -45,4 +45,20 @@ public class Utils {
 		}
 		custSumD.setTotalCostInCents(Integer.toString(globalCost));
 	}
+	
+	
+	/**
+	 * Mis a jour du coup total dans  CustomerSummariesDetail
+	 * 
+	 * @param custSummDetail
+	 * @param costInCents
+	 */
+	public static void updateTotalCostInCent(CustomerSummariesDetail custSummDetail, String costInCents) {
+		int totalCostInCent = 0;
+		if (!custSummDetail.getTotalCostInCents().equals("0")){
+			totalCostInCent = Integer.valueOf(custSummDetail.getTotalCostInCents());	
+		} 
+		totalCostInCent += Integer.valueOf(costInCents);
+		custSummDetail.setTotalCostInCents(String.valueOf(totalCostInCent));
+	}
 }
