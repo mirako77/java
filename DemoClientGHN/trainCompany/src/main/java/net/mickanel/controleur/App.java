@@ -16,7 +16,6 @@ import java.util.Map.Entry;
 import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -100,7 +99,6 @@ public class App {
 					String costInCents = Utils.calculatePriceOfVoyageInCents(newVoyage.getZoneFrom(),
 							newVoyage.getZoneTo());
 					newVoyage.setCostInCents(costInCents); // maj du cout
-					newVoyage.setWritable(false); // On ne doit plus modifier ce voyage
 					vListTmp.set(index, newVoyage); // maj de l'entrée
 					// On calcul le cout si celui ci n'est pas renseigné  car le trajet A/R est clot
 				} else { // On crée un autre voyage sinon

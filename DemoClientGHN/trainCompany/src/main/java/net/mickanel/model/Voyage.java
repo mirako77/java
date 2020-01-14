@@ -9,7 +9,6 @@ public class Voyage {
 	private String costInCents;
 	private String zoneFrom;
 	private String zoneTo;
-	private boolean isWritable;
 	
 	public Voyage(String stationStart, String stationEnd, String startedJourneyAt, String costInCents, String zoneFrom,
 			String zoneTo) {
@@ -20,7 +19,6 @@ public class Voyage {
 		this.costInCents = costInCents;
 		this.zoneFrom = zoneFrom;
 		this.zoneTo = zoneTo;
-		this.isWritable = true;
 	}
 	
 	public String getStationStart() {
@@ -59,19 +57,18 @@ public class Voyage {
 	public void setZoneTo(String zoneTo) {
 		this.zoneTo = zoneTo;
 	}
-	@JsonIgnore
-	public boolean isWritable() {
-		return isWritable;
-	}
-	public void setWritable(boolean isWritable) {
-		this.isWritable = isWritable;
-	}
+//	@JsonIgnore
+//	public boolean isWritable() {
+//		return isWritable;
+//	}
+//	public void setWritable(boolean isWritable) {
+//		this.isWritable = isWritable;
+//	}
 	
 	@Override
 	public String toString() {
 		return "Voyage [stationStart=" + stationStart + ", stationEnd=" + stationEnd + ", startedJourneyAt="
-				+ startedJourneyAt + ", costInCents=" + costInCents + ", zoneFrom=" + zoneFrom + ", zoneTo=" + zoneTo
-				+ ", isWritable=" + isWritable + "]";
+				+ startedJourneyAt + ", costInCents=" + costInCents + ", zoneFrom=" + zoneFrom + ", zoneTo=" + zoneTo;
 	} 
 	
 	
