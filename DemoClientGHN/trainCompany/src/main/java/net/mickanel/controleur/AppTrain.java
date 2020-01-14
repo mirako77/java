@@ -30,12 +30,12 @@ import net.mickanel.services.Utils;
  * main class company train management
  *
  */
-public class App {
-	private static Logger logger = Logger.getLogger(App.class);
+public class AppTrain {
+	private static Logger logger = Logger.getLogger(AppTrain.class);
 
 	public static void main(String[] args) throws IOException {
 		// Lecture des donées du fichier
-		Map<String, List<Step>> custStepList = fromJson("src\\main\\resources\\candidateInput3.txt");
+		Map<String, List<Step>> custStepList = fromJson(args[0]);
 
 		// Analyse des différents trajet du(des) voyageur(s)
 		CustomerSummaries custSum = new CustomerSummaries(); 
@@ -276,7 +276,7 @@ public class App {
 		
 		// Java objects to JSON file
 		try {
-			mapper.writeValue(new File("src\\main\\resources\\candidateOutput.txt"), custSum);
+			mapper.writeValue(new File("candidateOutput.txt"), custSum);
 		} catch (JsonGenerationException e) {
 			logger.error(e);
 		} catch (JsonMappingException e) {
