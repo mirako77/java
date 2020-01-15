@@ -25,7 +25,7 @@ to runt it in stand alone mode keep in mind that you have to specify the jackson
 it is specified in the Manifest of the jar after building it like this: 
 Class-Path: lib/log4j-1.2.17.jar lib/jackson-databind-2.9.10.1.jar lib/jackson-annotations-2.9.10.jar lib/jackson-core-2.9.10.jar
 
-it's possbile to build the package with maven, once une have imported the source code by this command line: 
+it's possible to build the package with maven, once une have imported the source code by this command line: 
 	- mvn clean package --> you will get the jar package in the target folder
 
 You can run unit test directly inside eclipse by selecting the file AppTest.java > Run As > Junit test
