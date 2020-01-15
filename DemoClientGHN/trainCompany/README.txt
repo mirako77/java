@@ -6,14 +6,14 @@ So you will need at least a Java runtime to run it.
 
 You can get the projet on github at this url: https://github.com/mirako77/java/tree/master/DemoClientGHN/trainCompany
 
-You can clone the project with git clone and run it to and IDE like eclipse or IntelliJ.
-I develloped it with eclipse but it will not be more complicate to run it wiithin IntelliJ or other IDE.
-After clonning it you can import it in Eclipse IDE as a maven project.
-
+You can clone the project with git clone and run it inside an IDE like eclipse or IntelliJ.
+I develloped this with eclipse but it will not be more complicate to run it within IntelliJ or other IDE.
+After clonning the project to your local environement, you can import it inside Eclipse IDE as a maven project.
 
 How to Run the program:
+
 You can run it directly inside Eclipse IDE after importing it.
-	inside eclipse: Run -> Run as -> Java project
+Select the class net.mickanel.controleur.AppTrain and inside eclipse: Run -> Run as -> Java project
 
 This program take one argument to run correctly.
 You have to specify the JSon file location as unique argument.
