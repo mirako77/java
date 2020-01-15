@@ -15,17 +15,17 @@ How to Run the program:
 You can run it directly inside Eclipse IDE after importing it.
 Select the class net.mickanel.controleur.AppTrain and inside eclipse: Run -> Run as -> Java project
 
-This program take one argument to run correctly.
+This program take one argument to run properly.
 You have to specify the JSon file location as unique argument.
-	inside eclipse you can go to Run configuration and add the file location inside Program argument.
+Inside eclipse you can go to Run configuration and add the file location inside Program argument.
 
-You can also run it as a stand alone programme after getting the jar file.
+You can also run it as a stand alone programme after building the jar file like this:
 	java -jar trainCompany-0.0.1-SNAPSHOT.jar "JSonFileLocation.txt"
 to runt it in stand alone mode keep in mind that you have to specify the jackson library inside the classpath.
 it is specified in the Manifest of the jar after building it like this: 
 Class-Path: lib/log4j-1.2.17.jar lib/jackson-databind-2.9.10.1.jar lib/jackson-annotations-2.9.10.jar lib/jackson-core-2.9.10.jar
 
-it's possbile to build the package with maven from the source code by this command line: 
+it's possbile to build the package with maven, once une have imported the source code by this command line: 
 	- mvn clean package --> you will get the jar package in the target folder
 
 You can run unit test directly inside eclipse by selecting the file AppTest.java > Run As > Junit test
