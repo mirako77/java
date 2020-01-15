@@ -95,7 +95,7 @@ public class AppTrain {
 					Voyage newVoyage = new Voyage(voyage.getStationStart(), currentStep.getStation(),
 							voyage.getStartedJourneyAt(), "", voyage.getZoneFrom(), "");
 					// Calcul de la Zone du retour
-					getZoneEndForStation(newVoyage);
+					Utils.getZoneEndForStation(newVoyage);
 					// Calcul le prix du voyage
 					String costInCents = Utils.calculatePriceOfVoyageInCents(newVoyage.getZoneFrom(),
 							newVoyage.getZoneTo());
@@ -104,7 +104,7 @@ public class AppTrain {
 					vListTmp.set(index, newVoyage); // maj de l'entrée
 					// On calcul le cout si celui ci n'est pas renseigné  car le trajet A/R est clot
 				} else { // On crée un autre voyage sinon
-					String zone = getZoneForStation(currentStep.getStation());
+					String zone = Utils.getZoneForStation(currentStep.getStation());
 					Voyage newVoyage = new Voyage(currentStep.getStation(), "", currentStep.getUnixTimestamp(),
 																						"", zone, "");
 					vListTmp.add(index + 1, newVoyage);
@@ -120,7 +120,7 @@ public class AppTrain {
 	 */
 	private static void initCustSumDetVoyage(
 			CustomerSummaries custSum, CustomerSummariesDetail custSumDet, Step currentStep) {
-		String zone = getZoneForStation(currentStep.getStation());
+		String zone = Utils.getZoneForStation(currentStep.getStation());
 		// je remplis les champs 1, 3, 5 pour la premiére création
 		Voyage vTmp = new Voyage(currentStep.getStation(), "", currentStep.getUnixTimestamp(), "", zone,"");
 		List<Voyage> vList = new ArrayList<>();
@@ -136,94 +136,6 @@ public class AppTrain {
 			custSumDet.setCustomerId(currentStep.getCustomerId());
 			custSumDet.setTotalCostInCents("0");
 			custSum.getCustomerSummariesDetailList().put(Integer.valueOf(currentStep.getCustomerId()), custSumDet);
-		}
-	}
-
-	public enum wichZone {
-		A("1"), B("1"), C("2"), D("2"), E("2"), F("3"), G("4"), H("4"), I("4");
-		private String value;
-
-		wichZone(String value) {
-			this.value = value;
-		}
-
-		public String value() {
-			return value;
-		}
-
-	}
-
-	/**
-	 * Calcul de la zone de tarification d'arrivée en fonction de la gare et de
-	 * la zone de départ.
-	 * 
-	 * @param stationFrom
-	 * @param stationTo
-	 * @return
-	 */
-	private static String getZoneForStation(String station) {
-		wichZone zone = wichZone.valueOf(station);
-		return zone.value;
-	}
-
-	/**
-	 * Calcul de la zone de retour PS: la zone la plus interressante pour le
-	 * client est toujours celle qui est sélectionné
-	 * 
-	 * @param vg
-	 * @return
-	 */
-	private static void getZoneEndForStation(Voyage vg) {
-		// Cas du trajet retour
-		switch (vg.getStationEnd()) {
-		case "A":
-			vg.setZoneTo("1");
-			break;
-		case "B":
-			vg.setZoneTo("1");
-			break;
-		case "C":
-			if (vg.getStationStart().contains("A") || vg.getStationStart().contains("B")
-					|| vg.getStationStart().contains("D") || vg.getStationStart().contains("E")) {
-				vg.setZoneTo("2");
-				break;
-			} else {
-				vg.setZoneTo("3");
-				break;
-			}
-		case "D":
-			vg.setZoneTo("2");
-			break;
-		case "E":
-			if (vg.getStationStart().contains("A") || vg.getStationStart().contains("B")
-					|| vg.getStationStart().contains("C") || vg.getStationStart().contains("D")) {
-				vg.setZoneTo("2");
-				break;
-			} else {
-				vg.setZoneTo("3");
-				break;
-			}
-		case "F":
-			if (vg.getStationStart().contains("A") || vg.getStationStart().contains("B")
-					|| vg.getStationStart().contains("C") || vg.getStationStart().contains("D")
-					|| vg.getStationStart().contains("E")) {
-				vg.setZoneTo("3");
-				break;
-			} else {
-				vg.setZoneTo("4");
-				break;
-			}
-		case "G":
-			vg.setZoneTo("4");
-			break;
-		case "H":
-			vg.setZoneTo("4");
-			break;
-		case "I":
-			vg.setZoneTo("4");
-			break;
-			default:
-				break;
 		}
 	}
 

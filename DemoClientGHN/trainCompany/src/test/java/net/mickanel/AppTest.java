@@ -76,7 +76,7 @@ public class AppTest
     /**
      * Vérification du cout d'un voyage de méme zone
      */
-    public void testupdateTotalCostInCent()
+    public void testUpdateTotalCostInCent()
     {
     	CustomerSummariesDetail custSumD = new CustomerSummariesDetail(1,"240",null);
     	Voyage v01 = new Voyage("A", "D", "1572244200", "240", "1", "2");
@@ -87,6 +87,17 @@ public class AppTest
     	Utils.updateTotalCostInCent(custSumD, "240");
     	
     	assertEquals(custSumD.getTotalCostInCents(), "480");
+    }
+    
+    /**
+     * Vérification du cout d'un voyage de méme zone
+     */
+    public void testZoneEndForStation()
+    {
+    	Voyage v01 = new Voyage("D", "G", "1572244200", "240", "1", "");
+    	Utils.getZoneEndForStation(v01);
+    	
+    	assertEquals(v01.getZoneTo() , "4");
     }
     
 }
