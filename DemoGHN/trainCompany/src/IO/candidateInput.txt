@@ -1,0 +1,44 @@
+{
+  "taps" :
+   [ 
+	 {  "unixTimestamp" : 1111111111,
+	    "customerId" : 1,
+	    "station" : "A"
+	  },
+	{
+	  "unixTimestamp": 2222222222,
+	  "customerId": 2,
+	  "station": "H"
+	},
+	{
+	  "unixTimestamp": 3333333333,
+	  "customerId": 1,
+	  "station": "D"
+	},
+	{
+	  "unixTimestamp": 4444444444,
+	  "customerId": 1,
+	  "station": "D"
+	},
+	{
+	  "unixTimestamp": 5555555555,
+	  "customerId": 1,
+	  "station": "A"
+	},
+	{
+	  "unixTimestamp": 6666666666,
+	  "customerId": 2,
+	  "station": "D"
+	},
+	{
+	  "unixTimestamp": 7777777777,
+	  "customerId": 1,
+	  "station": "E"
+	},
+	{
+	  "unixTimestamp": 8888888888,
+	  "customerId": 5,
+	  "station": "G"
+	}
+  ]
+}
