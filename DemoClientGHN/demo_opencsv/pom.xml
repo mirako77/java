@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.mickanel</groupId>
+	<artifactId>demo_airport</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>airport</name>
+	<description>Programme de lecture des données csv listant les données des aéroports.</description>
+	<url>http://www.mickanel.net</url>
+
+	<licenses>
+		<license>
+			<name>Copyright ©2016 mickanel.net</name>
+			<comments>Les sources présentés sur cette page sont libres de droits, et vous pouvez les utiliser à votre convenance. 
+			Copyright ©2016 mickanel.net. 
+			</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Mickael Rakotomalala</name>
+			<roles>
+				<role>Developper</role>
+			</roles>
+			<organization>mickanel.net</organization>
+		</developer>
+
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>4.8.2</junit.version>
+		<jfreechart.version>1.0.14</jfreechart.version>
+		<opencsv.version>2.3</opencsv.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- jfreechart -->
+			<dependency>
+				<groupId>org.jfree</groupId>
+				<artifactId>jfreechart</artifactId>
+				<version>${jfreechart.version}</version>
+			</dependency>
+
+			<!-- Open CSV -->
+			<dependency>
+				<groupId>net.sf.opencsv</groupId>
+				<artifactId>opencsv</artifactId>
+				<version>${opencsv.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- Junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- jfreechart -->
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+		</dependency>
+
+		<!-- Open CSV -->
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
