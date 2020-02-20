@@ -1,5 +1,6 @@
 package net.mickanel.microComPOC.web.controller;
 
+import net.mickanel.microComPOC.model.Product;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +17,8 @@ public class ProductController {
 //    }
 
     @GetMapping(value = "/Produits/{id}")
-    public String afficherUnProduit(@PathVariable int id) {
-        return "Vous avez demandé un produit avec l'id  " + id;
+    public Product afficherUnProduit(@PathVariable int id) {
+        Product product=new Product(id, new String("Aspirateur"), "500" );
+        return product;
     }
 }
