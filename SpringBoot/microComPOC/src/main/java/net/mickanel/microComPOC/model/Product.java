@@ -8,10 +8,10 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String nom, String prix) {
+    public Product(int id, String nom, String price) {
         this.id = id;
         this.nom = nom;
-        this.price = prix;
+        this.price = price;
     }
 
     public int getId() {
@@ -30,12 +30,12 @@ public class Product {
         this.nom = nom;
     }
 
-    public String getPrix() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrix(String prix) {
-        this.price = prix;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
-                ", prix='" + price + '\'' +
+                ", price='" + price + '\'' +
                 '}';
     }
 }
