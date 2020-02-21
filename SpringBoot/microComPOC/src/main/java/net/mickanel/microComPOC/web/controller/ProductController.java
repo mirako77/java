@@ -1,17 +1,24 @@
 package net.mickanel.microComPOC.web.controller;
 
+import net.mickanel.microComPOC.dao.ProductDAOImpl;
 import net.mickanel.microComPOC.model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ProductController {
     private static Logger logger = LoggerFactory.getLogger(ProductController.class);
 
+    @Autowired
+    private ProductDAOImpl productDao;
+
     @RequestMapping(value="/Produits", method= RequestMethod.GET)
-    public String listeProduits() {
-        return "Un exemple de produit";
+    public List<Product> listeProduits() {
+        return productDao.findAll();
     }
 
 //    @RequestMapping(value = "/Produits/{id}", method = RequestMethod.GET)
@@ -21,7 +28,8 @@ public class ProductController {
 
     @GetMapping(value = "/Produits/{id}")
     public Product afficherUnProduit(@PathVariable int id) {
-        Product product=new Product(id, new String("Aspirateur"), "500" );
+        //Product product=new Product(id, new String("Aspirateur"), "500" );
+        Product product = productDao.findById(id);
         logger.info("Appel WS afficherUnProduit:: " +product);
         return product;
     }

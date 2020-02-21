@@ -1,10 +1,12 @@
 package net.mickanel.microComPOC.dao;
 
 import net.mickanel.microComPOC.model.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ProductDAOImpl implements IProductDao {
 
     public static List<Product>products=new ArrayList<>();
@@ -22,11 +24,17 @@ public class ProductDAOImpl implements IProductDao {
 
     @Override
     public Product findById(int id) {
-        return products.get(id);
+        for (Product product : products) {
+            if(product.getId() ==id){
+                return product;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void save(Product product) {
-
+    public Product save(Product product) {
+        products.add(product);
+        return product;
     }
 }

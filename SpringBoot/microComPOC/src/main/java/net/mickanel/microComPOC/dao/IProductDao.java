@@ -7,5 +7,5 @@ import java.util.List;
 public interface IProductDao {
     public List<Product>findAll();
     public Product findById(int id);
-    public void save(Product product);
+    public Product save(Product product);
 }
