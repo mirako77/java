@@ -21,11 +21,12 @@ public class ProductController {
         return productDao.findAll();
     }
 
-//    @RequestMapping(value = "/Produits/{id}", method = RequestMethod.GET)
-//    public String afficherUnProduit(@PathVariable int id) {
-//        return "Vous avez demandé un produit avec l'id  " + id;
-//    }
+//  @RequestMapping(value = "/Produits/{id}", method = RequestMethod.GET)
+//  public String afficherUnProduit(@PathVariable int id) {
+//      return "Vous avez demandé un produit avec l'id  " + id;
+//  }
 
+//  Récupérer un produit a partir d'un GET
     @GetMapping(value = "/Produits/{id}")
     public Product afficherUnProduit(@PathVariable int id) {
         //Product product=new Product(id, new String("Aspirateur"), "500" );
@@ -33,4 +34,11 @@ public class ProductController {
         logger.info("Appel WS afficherUnProduit:: " +product);
         return product;
     }
+
+//  Ajouter un produit en POST
+    @PostMapping(value = "/Produits")
+    public void ajouterUnProduit(@RequestBody Product product) {
+        productDao.save(product);
+    }
+
 }

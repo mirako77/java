@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * microService avec Spring Boot.
  * Nous avons besoin de cet classe pour pouvoir lancer le jar de maniére
  * autonome dans un container.
+ *
+ * issue de:
+ * https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5122884-creez-un-microservice-grace-a-spring-boot
  */
 @SpringBootApplication
 public class MicroComPocApplication {
