@@ -1,6 +1,9 @@
 <h2>this is test page!</h2>
 <input type="text" value="mickanel" [id]="myId"/><br>
 <input [disabled]="isDisabled" type="text" value="cacheCache" id="{{myId}}"/>
+<p class="text-success">Vous avez réussi</p>
+<p [class]="successClass">Une autre façon de réussir</p>
+<p [class.text-failed]="hasError">Je suis en rouge si il y a une erreur !</p>
 <hr>
 <div>
     <p>My first expression: {{ 2 * 15 }}</p>

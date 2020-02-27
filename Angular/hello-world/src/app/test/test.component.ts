@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
   public myId = "123";
   public isDisabled : boolean = true;
+  public hasError = true;
+  public successClass = "text-success";
+
 
   constructor() { }
 

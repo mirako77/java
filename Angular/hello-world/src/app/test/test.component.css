@@ -1,0 +1,9 @@
+.text-success {
+    font-weight: bold;
+    color : green;
+}
+.text-failed {
+    font-weight: bold;
+    font: oblique;
+    color : crimson;
+}
