@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { MaterialPocComponent } from './material-poc/material-poc.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Test2CompComponent } from './test2-comp/test2-comp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    MaterialPocComponent
+    MaterialPocComponent,
+    Test2CompComponent
   ],
   imports: [
     BrowserModule,
