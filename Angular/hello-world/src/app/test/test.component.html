@@ -1,10 +1,29 @@
-<h2>this is test page!</h2>
-<input type="text" value="mickanel" [id]="myId"/><br>
-<input [disabled]="isDisabled" type="text" value="cacheCache" id="{{myId}}"/>
-<p class="text-success">Vous avez réussi</p>
-<p [class]="successClass">Une autre façon de réussir</p>
-<p [class.text-failed]="hasError">Je suis en rouge si il y a une erreur !</p>
+<h3>this is test page!</h3>
+<div style="margin-left: 20px;">
+    <!-- defintion Id-->
+    <input type="text" value="mickanel" [id]="myId"/><br>
+    <!-- input disbled dynamique-->
+    <input [disabled]="isDisabled" type="text" value="cacheCache" id="{{myId}}"/>
+    <!-- exemple de défintion de style avec l'attribut class -->
+    <p class="text-success">Vous avez réussi</p>
+    <p [class]="successClass">Une autre façon de réussir</p>
+    <!-- texte erreur dynamique-->
+    <p [class.text-failed]="hasError">Je suis en rouge si il y a une erreur !</p>
+    <!-- Gestion évenement sur boutton - JS vs TypeScript -->
+    <button onclick="alert('Je suis en javascript');">Click me!</button><br>
+    <!-- Gestion évenement sur boutton - Angular TypeScript -->
+    <button (click)="onClick($event);">Click me!</button> {{youClickMe}}
+    <hr>
+    <input #inp01 type="text">
+    <button (click)="logMessage(inp01)">Log input</button>
+</div>
 <hr>
+
+
 <div>
-    <p>My first expression: {{ 2 * 15 }}</p>
+    <p>Angular Material UI: <a href="/#">Material UI POC</a> </p>
+</div>  
+
+<div>
+    <p>My first expression: {{ 5 / 3 }}</p>
 </div>  
