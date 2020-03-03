@@ -7,12 +7,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-test2-comp',
   // templateUrl: './test2-comp.component.html',
   template: `
-        <p>{{ " hello " + name }}</p>
-        <button (click)="fireEvent()">send Event</button>
+        <p>{{ myDate | date: 'short' }}</p>
+        <p>{{ " hello " + name }}
+        <button (click)="fireEvent()">send Event</button></p>
         `,
   styleUrls: ['./test2-comp.component.css']
 })
 export class Test2CompComponent implements OnInit {
+  public myDate = new Date;
 
   @Input("parentData") public name;
 
