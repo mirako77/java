@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+/**
+ * Exemple d'utilisation du transfert de data entre un parent: app.component et le fils: test2-comp.component
+ */
 @Component({
   selector: 'app-test2-comp',
   // templateUrl: './test2-comp.component.html',
