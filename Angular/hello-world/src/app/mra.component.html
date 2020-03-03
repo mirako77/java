@@ -3,13 +3,12 @@
 <body>
 
 <div style="text-align: center;">
-    <h2>
-        Welcome {{title}}
-    </h2>
+    <h2>Welcome {{title}}</h2>
+    <p>{{message}}</p>
 </div>
 
 <!-- <app-test></app-test> -->
-<app-test2-comp [parentData]="name"></app-test2-comp>
+<app-test2-comp (childEvent)="message=$event" [parentData]="name"></app-test2-comp>
 
 </body>
 </html>
