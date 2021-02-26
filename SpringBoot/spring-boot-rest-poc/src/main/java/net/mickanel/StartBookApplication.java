@@ -21,9 +21,9 @@ public class StartBookApplication {
     @Bean
     CommandLineRunner initDatabase(BookRepository repository) {
         return args -> {
-            repository.save(new Book("Le retour de moi méme", "Mickael", new BigDecimal("30.55")));
+            repository.save(new Book("Développement Angular 11 BootStrap - Reloaded", "Micka R.", new BigDecimal("30.55")));
             repository.save(new Book("The Life-Changing Magic of Tidying Up", "Marie Kondo", new BigDecimal("9.69")));
             repository.save(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", new BigDecimal("47.99")));
-        };
+            repository.save(new Book("Android studio by example", "Steeve McQueen", new BigDecimal("36.99")));        };
     }
 }

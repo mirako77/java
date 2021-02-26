@@ -18,6 +18,7 @@ public class BookController {
 
     // Find
     @GetMapping("/books")
+    @CrossOrigin(origins = "http://localhost:4200")
     List<Book> findAll() {
         return repository.findAll();
     }
