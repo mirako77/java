@@ -4,6 +4,7 @@
 */target
 */*/target
 /Servers
+.sonarlint/*
 
 @ -1,46 +0,0 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
