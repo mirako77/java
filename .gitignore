@@ -1,7 +1,9 @@
 
 *.class
 *.kotlin_module
-/target
+*/target
+*/*/target
+/Servers
 
 @ -1,46 +0,0 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
@@ -50,4 +52,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-Spring/SpringMVCint01/target/SpringInt18n-SNAPSHOT-1.0.0/WEB-INF/lib/spring-core-4.3.1.RELEASE.jar
+Spring/SpringMVCint01/target/
+BlankPOCApp/target/
+/.metadata/
