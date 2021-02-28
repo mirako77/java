@@ -97,7 +97,8 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4jVersion}</version>
 			<scope>compile</scope>
-		</dependency>		
+		</dependency>	
+		<!-- https://www.baeldung.com/logback -->	
 		<dependency>
 		    <groupId>ch.qos.logback</groupId>
 		    <artifactId>logback-core</artifactId>
