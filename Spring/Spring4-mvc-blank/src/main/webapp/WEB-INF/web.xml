@@ -7,6 +7,10 @@
 
 	<display-name>Maven + Spring MVC Hello World + XML</display-name>
 	<description>Spring4 MVC web application</description>
+	
+	<welcome-file-list>
+		<welcome-file>hello.html</welcome-file>
+	</welcome-file-list>
 
 	<!-- For web context -->
 	<servlet>
