@@ -21,10 +21,8 @@
         
 		<spring.version>4.3.6.RELEASE</spring.version>
 		<!-- persistence -->
-		 <!-- <hibernate.version>5.0.5.Final</hibernate.version> - NON Compatible SQLite-->
-		 <hibernate.version>4.3.11.Final</hibernate.version>
- 		<!-- <mysql.version>5.1.31</mysql.version> 
-		<tomcat-dbcp.version>7.0.73</tomcat-dbcp.version> -->
+		<hibernate.version>5.0.5.Final</hibernate.version>
+		 <!-- <hibernate.version>4.3.11.Final</hibernate.version> -->
 		<!-- various -->
 		<!-- <hibernate-validator.version>5.4.1.Final</hibernate-validator.version> -->
 		<slf4j.version>1.7.30</slf4j.version>
@@ -163,15 +161,9 @@
         <!-- For SQLite Dialect compatibility -->
         <dependency>
             <groupId>com.enigmabridge</groupId>
-            <artifactId>hibernate4-sqlite-dialect</artifactId>
+            <artifactId>hibernate4-sqlite-dialect</artifactId> <!-- version hibernate 5 dialect non dispo -->
             <version>0.1.2</version>
         </dependency>
-        <!-- 
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-dbcp</artifactId>
-			<version>${tomcat-dbcp.version}</version>
-		</dependency> -->
 
 		<!-- LOGGER -->
 		<dependency>
@@ -197,7 +189,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

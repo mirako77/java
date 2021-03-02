@@ -25,6 +25,7 @@
 	</bean>
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<!-- <property name="persistence-xml-location" ref="persistence.xml" /> -->
 		<property name="persistenceUnitName" value="spring-jpa-unit" />
 		<property name="jpaVendorAdapter"> 
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
@@ -35,6 +36,7 @@
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop> <!-- create OR update -->
+				<prop key="hibernate.hbm2ddl.import_files">sql/import.sql</prop>
 			</props>
 		</property>
 	</bean>
