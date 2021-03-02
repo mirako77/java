@@ -75,7 +75,7 @@
 	<footer>
 		<p>&copy; http://mickanel.net 2021</p>
 	</footer>
-</div>
+<!-- </div> -->
 
 </body>
 </html>

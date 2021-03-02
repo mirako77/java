@@ -1,4 +1,4 @@
-package net.mickanel.web;
+package net.mickanel.ui;
 
 import java.util.Locale;
 import java.util.Map;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.mickanel.service.InfoService;
+import net.mickanel.services.InfoService;
 
 @Controller
 @RequestMapping("/info") // niveau supplémentaire {{ info }} dans l'url
