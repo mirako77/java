@@ -14,6 +14,7 @@
  	<!-- support des annotations spring -->
 	<mvc:annotation-driven />
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/resources/**" location="/WEB-INF/themeBlack/" cache-period="31556926"/>
 	
  	<!-- scan répertoire des controlleurs -->
 	<context:component-scan base-package="net.mickanel.ui" />

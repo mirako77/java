@@ -31,6 +31,12 @@ public class AppController {
 		return INDEX_VIEW;
 	}
 	
+	@GetMapping(value = "/home")
+	public String goHome() {
+		logger.info("goHome() is executed !");
+		return "home";
+	}
+	
 	@GetMapping(value = "/locale")
 	public String locale(Locale locale) {
 		logger.info("locale() is executed ! The client locale is {}.", locale);

@@ -11,15 +11,12 @@ public class InfoService {
 	private static final Logger logger = LoggerFactory.getLogger(InfoService.class);
 
 	public String getDesc() {
-
 		logger.debug("getDesc() is executed!");
 
 		return "Maven + Spring4 MVC Example";
-
 	}
 
 	public String getTitle(String name) {
-
 		logger.debug("getTitle() is executed! $name : {}", name);
 
 		if(StringUtils.isEmpty(name)){
@@ -27,7 +24,6 @@ public class InfoService {
 		}else{
 			return "Manahona " + name;
 		}
-		
 	}
 
 }
