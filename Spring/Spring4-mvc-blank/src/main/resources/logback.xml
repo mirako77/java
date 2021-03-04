@@ -4,7 +4,7 @@
 <configuration>
 
 	<property name="LOG_FILE" value="Spring4App" />
-	<property name="LOG_DIR" value="D:/" />
+	<property name="LOG_DIR" value="D:/MyProjects" />
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 	    <file>${LOG_DIR}/${LOG_FILE}.log</file>
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
