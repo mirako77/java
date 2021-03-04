@@ -11,17 +11,17 @@
 	<url>http://mickanel.net</url>
 
 	<properties>
-		<myApp.finalName>SpringMVCPoc</myApp.finalName>
+		<myAppName>SpringMVCPoc</myAppName>
 		<!-- A adapter en fonction du répertoire du serveur Tomcat -->
-		<tomcat.webappDirectory>D:\MyProjects\apache-tomcat-9.0.12\webapps\${myApp.finalName}\</tomcat.webappDirectory>
+		<tomcat.webappDirectory>D:\MyProjects\apache-tomcat-9.0.12\webapps\</tomcat.webappDirectory>
 		
 		<project.java.version>1.8</project.java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         
-		<spring.version>4.3.6.RELEASE</spring.version>
+		<spring.version>4.3.29.RELEASE</spring.version>
 		<!-- persistence -->
-		<hibernate.version>5.0.5.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		 <!-- <hibernate.version>4.3.11.Final</hibernate.version> -->
 		<!-- various -->
 		<!-- <hibernate-validator.version>5.4.1.Final</hibernate-validator.version> -->
@@ -31,14 +31,30 @@
 	</properties>
 	
 	<build>
-		<finalName>${myApp.finalName}</finalName>
+		<finalName>${myAppName}</finalName>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${tomcat.webappDirectory}/${myAppName}</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+        	</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
 				<configuration>
-					<webappDirectory>${tomcat.webappDirectory}</webappDirectory>
+					<webappDirectory>${tomcat.webappDirectory}/${myAppName}</webappDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
