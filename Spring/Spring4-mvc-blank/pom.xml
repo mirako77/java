@@ -11,11 +11,24 @@
 	<url>http://mickanel.net</url>
 
 	<properties>
+		<myAppName>SpringMVCPoc</myAppName>
 		<java-version>1.8</java-version>
-		<spring.version>4.3.6.RELEASE</spring.version>
+		<spring.version>4.3.29.RELEASE</spring.version>
 		<slf4jVersion>1.7.30</slf4jVersion>
 		<logbackVersion>1.2.3</logbackVersion>
 	</properties>
+	
+	<build>
+		<finalName>Spring4-mvc-blank</finalName>
+		<plugins>
+			<!-- Config: Maven Tomcat Plugin -->
+			<!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
+			<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
+				<version>2.2</version> Config: contextPath and Port (Default - /Spring4-mvc-blank 
+				: 8080) <configuration> <path>/Spring4demo</path> <port>8088</port> </configuration> 
+				</plugin> -->
+		</plugins>
+	</build>
 
 	<dependencies>
 		<!-- Spring Framework -->
@@ -86,20 +99,8 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<finalName>Spring4-mvc-blank</finalName>
-		<plugins>
-			<!-- Config: Maven Tomcat Plugin -->
-			<!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
-			<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
-				<version>2.2</version> Config: contextPath and Port (Default - /Spring4-mvc-blank 
-				: 8080) <configuration> <path>/Spring4demo</path> <port>8088</port> </configuration> 
-				</plugin> -->
-		</plugins>
-	</build>
 </project>
