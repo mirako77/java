@@ -13,9 +13,12 @@
  
  	<!-- support des annotations spring -->
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-	<mvc:resources mapping="/resources/**" location="/WEB-INF/themeBlack/" cache-period="31556926"/>
+	<!-- Definition du théme actif : on mappe toutes les urls en /res/** -->
+	<mvc:resources mapping="/static/**" location="/static/theme1/" cache-period="31556926"/>
+	<!-- <mvc:resources mapping="/res/**" location="/static/themeTwo/" cache-period="31556926"/> -->
 	
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+		
  	<!-- scan répertoire des controlleurs -->
 	<context:component-scan base-package="net.mickanel.ui" />
  

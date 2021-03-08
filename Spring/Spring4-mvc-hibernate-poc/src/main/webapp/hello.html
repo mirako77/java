@@ -3,8 +3,9 @@
 <head>
 	<title>SpringMVC POC</title>
 	<!-- CSS Ressources -->
-	<link href="res/core/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="res/core/css/App.css" rel="stylesheet" />
+	<link href="static/theme1/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="static/theme1/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="static/theme1/css/main.css" rel="stylesheet" />
 </head>
 <meta charset="UTF-8">
 <body>
@@ -24,16 +25,21 @@
 		Le build se fait dans maven avec: <strong>mvn clean package</strong> <br>
 		On doit le lancer dans un serveur d'application, par exemple tomcat. <br><br>
 		
-		L'url d'accés : <a href="http://localhost:8080/SpringMVCPoc/">http://localhost:8080/SpringMVCPoc/</a> <br>
-		Déclencher une action Spring MVC classique: <a href="http://localhost:8080/SpringMVCPoc/app/info/hello">SpringMVCPoc/info/app/hello</a> <br>
-		Déclencher une action Spring MVC paramétré: <a href="http://localhost:8080/SpringMVCPoc/app/info/hello/mick">SpringMVCPoc/info/app/hello/mick</a> <br>
+		L'url d'accés : <a href="/SpringMVCPoc">http://localhost:8080/SpringMVCPoc/</a> <br>
+		Action Spring MVC classique: <a href="/SpringMVCPoc/app/info/hello">SpringMVCPoc/info/app/hello</a> <br>
+		Ation Spring MVC paramétré: <a href="/SpringMVCPoc/app/info/hello/mick">SpringMVCPoc/info/app/hello/mick</a> <br>
     	<br>
-    	info locale FR: <a href="http://localhost:8080/SpringMVCPoc/app/info/locale?locale=fr">SpringMVCPoc/app/info/locale?locale=fr</a><br>
-    	info locale EN: <a href="http://localhost:8080/SpringMVCPoc/app/info/locale?locale=en">SpringMVCPoc/app/info/locale?locale=en</a><br>
+    	info locale FR: <a href="/SpringMVCPoc/app/info/locale?locale=fr">SpringMVCPoc/app/info/locale?locale=fr</a><br>
+    	info locale EN: <a href="/SpringMVCPoc/app/info/locale?locale=en">SpringMVCPoc/app/info/locale?locale=en</a><br>
     </p>
     
     </div>
 </div>
 
 </body>
+
+<script src="static/theme1/js/jquery_1_11_2.min.js"></script>
+<script src="static/theme1/js/bootstrap.min.js"></script>
+<script src="static/theme1/js/main.js"></script>
+
 </html>
