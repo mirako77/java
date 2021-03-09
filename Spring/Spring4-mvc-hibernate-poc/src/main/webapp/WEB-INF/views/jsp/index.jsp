@@ -5,17 +5,17 @@
 <head>
 	<title>Spring4 POC</title>
 	<!-- CSS Ressources -->
-	<spring:url value="/app/static/css/hello.css" var="coreCss" />
+	<spring:url value="/app/static/css/main.css" var="mainCss" />
 	<spring:url value="/app/static/css/bootstrap.min.css" var="bootstrapCss" />
 	<link href="${bootstrapCss}" rel="stylesheet" />
-	<link href="${coreCss}" rel="stylesheet" />
+	<link href="${mainCss}" rel="stylesheet" />
 	
 	<!-- JS Ressources -->
 	<spring:url value="/app/static/js/jquery_1_11_2.min.js" var="jquerymin" />
 	<spring:url value="/app/static/js/bootstrap.min.js" var="bootstrapJs" />
 	<spring:url value="/app/static/js/main.js" var="myJs" />
-	<script src="${bootstrapJs}"></script>
 	<script src="${jquerymin}"></script>
+	<script src="${bootstrapJs}"></script>
 	<script src="${myJs}"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
 </head>
