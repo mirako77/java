@@ -21,7 +21,7 @@
         <tomcat-dbcp.version>7.0.73</tomcat-dbcp.version>
 
 		<!-- various -->
-        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
 
 	</properties>
 
