@@ -9,6 +9,13 @@
 
 	<name>Spring4-mvc hibernate bootstrap POC - Maven Webapp</name>
 	<url>http://mickanel.net</url>
+	
+<!-- 	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories> -->
 
 	<properties>
 		<myAppName>SpringMVCPoc</myAppName>
@@ -27,7 +34,7 @@
 		<!-- <hibernate-validator.version>5.4.1.Final</hibernate-validator.version> -->
 		<slf4j.version>1.7.30</slf4j.version>
 		<logback.version>1.2.3</logback.version>
-		<sqlite.version>3.34.0</sqlite.version>
+		<hsqldb.version>2.5.1</hsqldb.version>
 	</properties>
 	
 	<build>
@@ -163,17 +170,12 @@
             <version>1.1</version>
         </dependency>
         <!-- DataBase -->
+        
         <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>${sqlite.version}</version>
-        </dependency>
-        <!-- For SQLite Dialect compatibility -->
-        <dependency>
-            <groupId>com.enigmabridge</groupId>
-            <artifactId>hibernate4-sqlite-dialect</artifactId> <!-- version hibernate 5 dialect non dispo -->
-            <version>0.1.2</version>
-        </dependency>
+		  <groupId>org.hsqldb</groupId>
+		  <artifactId>hsqldb</artifactId>
+		  <version>${hsqldb.version}</version>
+		</dependency>
 
 		<!-- LOGGER -->
 		<dependency>

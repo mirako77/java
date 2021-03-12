@@ -4,7 +4,7 @@
 <configuration>
 
 	<property name="LOG_FILE" value="Spring4App" />
-	<property name="LOG_DIR" value="D:/MyProjects" />
+	<property name="LOG_DIR" value="D:/MyProjects/DemoWorkspace/log" />
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 	    <file>${LOG_DIR}/${LOG_FILE}.log</file>
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -16,7 +16,8 @@
 	        <totalSizeCap>1GB</totalSizeCap>
 	    </rollingPolicy>
 	    <encoder>
-	        <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+	        <pattern>%d{MM-dd HH:mm:ss} [%thread] %-5level %logger{35} - %msg%n</pattern>
+	        <!-- <pattern>%d{MM-dd HH:mm:ss} %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern> -->
 	    </encoder>
 	</appender>
 	

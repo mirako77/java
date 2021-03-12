@@ -1,15 +1,11 @@
 package net.mickanel.entity;
 
-
-import java.util.Date;
-
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="customer")
@@ -23,11 +19,11 @@ public class Customer {
 	
 	private String country;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date createdDate;
+	@Basic
+	private java.time.LocalDate createdDate;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updateDate;
+	@Basic
+	private java.time.LocalDateTime updateDate;
 
 	public long getCustomerId() {
 		return customerId;
@@ -53,19 +49,19 @@ public class Customer {
 		this.country = country;
 	}
 
-	public Date getCreatedDate() {
+	public java.time.LocalDate getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(java.time.LocalDate createdDate) {
 		this.createdDate = createdDate;
 	}
 
-	public Date getUpdateDate() {
+	public java.time.LocalDateTime getUpdateDate() {
 		return updateDate;
 	}
 
-	public void setUpdateDate(Date updateDate) {
+	public void setUpdateDate(java.time.LocalDateTime updateDate) {
 		this.updateDate = updateDate;
 	}
 	
