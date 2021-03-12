@@ -36,6 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
 		customer = customerDAO.addCustomer(customer);
 		return customer;
 	}
+	
 	@Transactional
 	public Customer updateCustomer(long customerId,String customerName, String country) {
 		

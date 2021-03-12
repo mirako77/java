@@ -6,7 +6,7 @@
 		<div class="col-md-12">
 			<div class="">
 				<a class="btn btn-primary"
-					href="<%=contextPath%>/customer/customerForm.action"
+					href="<%=contextPath%>/app/market/addCustomerForm"
 					style="margin-left: 50%;">Add Customer</a>
 			</div>
 			<div class="table-responsive">

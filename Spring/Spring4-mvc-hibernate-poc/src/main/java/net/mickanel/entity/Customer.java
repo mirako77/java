@@ -7,14 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Index;
+
+@SuppressWarnings("deprecation")
 @Entity
 @Table(name="customer")
 public class Customer {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long customerId;
 	
+	@SuppressWarnings("deprecation")
+	@Index(name="customerNameIndex")
 	private String customerName;
 	
 	private String country;

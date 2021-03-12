@@ -75,8 +75,15 @@ public class MarketController {
 		return model;
 		
 	}
-	@PostMapping(value="/addCustomer")
+		
+	@GetMapping(value="/addCustomerForm")
 	public ModelAndView addCustomer(HttpServletRequest request,HttpServletResponse response){
+		logger.info("addCustomerForm page invoked");
+		return new ModelAndView("addCustomerForm");
+	}
+	
+	@PostMapping(value="/addCustomerAction")
+	public ModelAndView addCustomerAction(HttpServletRequest request,HttpServletResponse response){
 		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("customers");
@@ -93,7 +100,6 @@ public class MarketController {
 		model.addObject("customers", list);
 		
 		return model;
-		
 	}
 	
 	
