@@ -28,9 +28,9 @@
 								<td>${customer.country }</td>
 								<td>${customer.createdDate }</td>
 								<td><a class="btn btn-primary"
-									href="<%=contextPath%>/customer/editCustomerView/${customer.customerId}.action">Edit</a>
+									href="<%=contextPath%>/app/market/editCustomerView/${customer.customerId}">Edit</a>
 									<a class="btn btn-warning"
-									href="<%=contextPath%>/customer/deleteCustomer/customerId=${customer.customerId}.action">Delete</a>
+									href="<%=contextPath%>/app/market/deleteCustomer/${customer.customerId}">Delete</a>
 								</td>
 							</tr>
 						</c:forEach>

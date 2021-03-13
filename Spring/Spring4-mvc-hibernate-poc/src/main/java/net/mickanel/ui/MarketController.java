@@ -52,8 +52,27 @@ public class MarketController {
 		Customer cus = customerService.getCustomer(Long.parseLong(customerId));
 		model.addObject("customer", cus);
 		return model;
-		
 	}
+	
+	@GetMapping("/deleteCustomer/{customerId}")
+	public ModelAndView deleteCustomer(@PathVariable("customerId") String customerId){
+		logger.info("deleteCustomer page invoked");
+		ModelAndView model  = new ModelAndView("customers");
+		boolean removed = customerService.removeCustomer(Long.parseLong(customerId));
+		
+		if(removed==true){
+			model.addObject("saveSuccess", "Customer removed SuccessFully. id = "+customerId);
+		}else{
+			model.addObject("saveError", "Customer deletion failed! id = "+ customerId);
+		}
+		
+		List<Customer> list = customerService.getAllCustomers();
+		model.addObject("customers", list);
+		
+		return model;
+	}
+	
+	
 	@PostMapping(value="/editCustomer")
 	public ModelAndView editCustomer(HttpServletRequest request,HttpServletResponse response){
 		
@@ -73,7 +92,6 @@ public class MarketController {
 		model.addObject("customers", list);
 		
 		return model;
-		
 	}
 		
 	@GetMapping(value="/addCustomerForm")

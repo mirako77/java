@@ -14,6 +14,14 @@ import org.hibernate.annotations.Index;
 @Table(name="customer")
 public class Customer {
 	
+	public Customer() {
+	}
+	
+	// Constructor with id
+	public Customer(long id) {
+		this.customerId = id;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long customerId;

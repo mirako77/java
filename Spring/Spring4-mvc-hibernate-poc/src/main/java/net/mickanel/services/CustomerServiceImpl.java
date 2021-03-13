@@ -58,5 +58,17 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDAO.getCustomers();
 	}
 
+	@Override
+	public boolean removeCustomer(long customerId) {
+		logger.debug(" removeCustomer() {"+customerId+"}");
+		try {
+			customerDAO.removeCustomer(customerId);
+		} catch (Exception e) {
+			logger.debug(" removeCustomer failed ! "+e.getMessage());
+			return false;
+		}
+		return true;
+	}
+
 
 }

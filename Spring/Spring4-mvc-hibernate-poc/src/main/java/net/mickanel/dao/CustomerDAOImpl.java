@@ -6,6 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import net.mickanel.entity.Customer;
+import net.mickanel.services.CustomerServiceImpl;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class CustomerDAOImpl implements CustomerDAO{
 	
+	private static final Logger logger = LoggerFactory.getLogger(CustomerDAOImpl.class);
 	
 	@PersistenceContext
 	public EntityManager entityManager;
@@ -30,8 +35,13 @@ public class CustomerDAOImpl implements CustomerDAO{
 	}
 
 	@Transactional(readOnly=false)
-	public void deleteCustomer(long customerId) {
-		entityManager.remove(customerId);
+	public void removeCustomer(long customerId) {
+		Customer cusToRemove = getCustomer(customerId);
+		if (cusToRemove != null) {
+			entityManager.remove(cusToRemove);
+		} else {
+			logger.debug("Customer {} to removed doesn't exist !",customerId);
+		}
 	}
 
 	@Transactional(readOnly=true)
