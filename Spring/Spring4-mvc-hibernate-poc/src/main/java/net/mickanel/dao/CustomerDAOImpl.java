@@ -35,13 +35,15 @@ public class CustomerDAOImpl implements CustomerDAO{
 	}
 
 	@Transactional(readOnly=false)
-	public void removeCustomer(long customerId) {
+	public boolean removeCustomer(long customerId) {
 		Customer cusToRemove = getCustomer(customerId);
 		if (cusToRemove != null) {
 			entityManager.remove(cusToRemove);
 		} else {
 			logger.debug("Customer {} to removed doesn't exist !",customerId);
+			return false;
 		}
+		return true;
 	}
 
 	@Transactional(readOnly=true)

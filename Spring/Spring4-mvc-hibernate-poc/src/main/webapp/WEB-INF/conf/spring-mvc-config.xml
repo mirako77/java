@@ -14,8 +14,8 @@
  	<!-- support des annotations spring -->
 	<mvc:annotation-driven />
 	<!-- Definition du théme actif : on mappe toutes les urls en /res/** -->
-	<mvc:resources mapping="/static/**" location="/static/theme1/" cache-period="31556926"/>
-	<!-- <mvc:resources mapping="/res/**" location="/static/themeTwo/" cache-period="31556926"/> -->
+	<mvc:resources mapping="/static/**" location="/static/themeDarkBSTp3/" cache-period="31556926"/>
+	<!-- <mvc:resources mapping="/static/**" location="/static/themeDarkBSTp4/" cache-period="31556926"/> -->
 	
 	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
 		
@@ -27,6 +27,18 @@
 		<property name="prefix" value="/WEB-INF/views/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<!-- Gestion des Exceptions -->
+	<bean class = "org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+      <property name = "exceptionMappings">
+         <props>
+            <prop key = "net.mickanel.services.SpringException">
+               ExceptionPage
+            </prop>
+         </props>
+      </property>
+      <property name = "defaultErrorView" value = "error"/>
+   </bean>
 	
 	<!-- Internationalisation -->
 	<bean id="messageSource"

@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import net.mickanel.entity.Customer;
 import net.mickanel.services.CustomerService;
+import net.mickanel.services.SpringException;
 
 @Controller
 @RequestMapping("/market")
@@ -55,6 +57,7 @@ public class MarketController {
 	}
 	
 	@GetMapping("/deleteCustomer/{customerId}")
+	@ExceptionHandler({SpringException.class})
 	public ModelAndView deleteCustomer(@PathVariable("customerId") String customerId){
 		logger.info("deleteCustomer page invoked");
 		ModelAndView model  = new ModelAndView("customers");
@@ -63,7 +66,8 @@ public class MarketController {
 		if(removed==true){
 			model.addObject("saveSuccess", "Customer removed SuccessFully. id = "+customerId);
 		}else{
-			model.addObject("saveError", "Customer deletion failed! id = "+ customerId);
+			model.addObject("saveError", "Customer remove failed! id = "+ customerId);
+//			throw new SpringException("SpringException: Peux pas supprimer le = "+customerId);
 		}
 		
 		List<Customer> list = customerService.getAllCustomers();

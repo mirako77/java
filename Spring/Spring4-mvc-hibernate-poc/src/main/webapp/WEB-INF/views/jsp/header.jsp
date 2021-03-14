@@ -13,12 +13,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- CSS Ressources -->
-	<spring:url value="/app/static/css/main.css" var="mainCss" />
+	<spring:url value="/static/root/main.css" var="mainCss" />
 	<spring:url value="/app/static/css/bootstrap.min.css" var="bootstrapcss" />
 	<spring:url value="/app/static/css/font-awesome.min.css" var="fontawesomecss" />
 	<link href="${mainCss}" rel="stylesheet" />
 	<link href="${bootstrapcss}" rel="stylesheet" />
-	<link href="${fontawesomecss}" rel="stylesheet" />  
+	<link href="${fontawesomecss}" rel="stylesheet" /> 
+	
 </head>
 <body>
  <div class="navbar navbar-inverse navbar-fixed-left">
@@ -46,3 +47,17 @@
     </div>
   </div>
   </div>
+  
+  <c:if test="${saveSuccess !=null}">
+    <div class="alert alert-success alert-dismissible">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <strong> ${saveSuccess}</strong>
+	</div>
+  </c:if>
+
+	<c:if test="${saveError !=null}">
+		<div class="alert alert-danger alert-dismissible">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <strong>${saveError}</strong> 
+		</div>
+	</c:if>

@@ -11,8 +11,7 @@
 			</div>
 			<div class="table-responsive">
 
-				<table id="mytable" class="table table-bordered"
-					style="margin: 10px; width: 80%;">
+				<table id="mytable" class="table table-bordered" style="margin: 10px; width: 95%;">
 					<thead>
 						<th>Customer Id</th>
 						<th>Customer Name</th>

@@ -60,11 +60,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public boolean removeCustomer(long customerId) {
-		logger.debug(" removeCustomer() {"+customerId+"}");
+		logger.debug(" removeCustomer() - id = {}",customerId);
 		try {
-			customerDAO.removeCustomer(customerId);
+			 boolean removeStatus = customerDAO.removeCustomer(customerId);
+			 if (!removeStatus)
+				 throw new SpringException("Exception removeCustomer() - suppression KO ! id = "+customerId );
 		} catch (Exception e) {
-			logger.debug(" removeCustomer failed ! "+e.getMessage());
+			logger.debug(" removeCustomer() failed ! {}", e.getMessage());
 			return false;
 		}
 		return true;
