@@ -7,17 +7,17 @@
 			<div class="">
 				<a class="btn btn-primary"
 					href="<%=contextPath%>/app/market/addCustomerForm"
-					style="margin-left: 50%;">Add Customer</a>
+					style="margin-left: 75%;">Add Customer</a>
 			</div>
 			<div class="table-responsive">
 
-				<table id="mytable" class="table table-bordered" style="margin: 10px; width: 95%;">
-					<thead>
-						<th>Customer Id</th>
+				<table id="mytable" class="table table-hover" style="margin: 2px; width: 98%;">
+					<thead style="font-size: large">
+						<th>Id</th>
 						<th>Customer Name</th>
 						<th>Country</th>
 						<th>Created Date</th>
-						<th>Edit</th>
+						<th style="text-align: right">...</th>
 					</thead>
 					<tbody>
 						<c:forEach var="customer" items="${customers}">
@@ -26,7 +26,7 @@
 								<td>${customer.customerName }</td>
 								<td>${customer.country }</td>
 								<td>${customer.createdDate }</td>
-								<td><a class="btn btn-primary"
+								<td style="text-align: right"><a class="btn btn-primary"
 									href="<%=contextPath%>/app/market/editCustomerView/${customer.customerId}">Edit</a>
 									<a class="btn btn-warning"
 									href="<%=contextPath%>/app/market/deleteCustomer/${customer.customerId}">Delete</a>

@@ -14,8 +14,7 @@
  	<!-- support des annotations spring -->
 	<mvc:annotation-driven />
 	<!-- Definition du théme actif : on mappe toutes les urls en /res/** -->
-	<mvc:resources mapping="/static/**" location="/static/themeDarkBSTp3/" cache-period="31556926"/>
-	<!-- <mvc:resources mapping="/static/**" location="/static/themeDarkBSTp4/" cache-period="31556926"/> -->
+	<mvc:resources mapping="/static/**" location="/static/themeDarkGrey/" cache-period="31556926"/>
 	
 	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
 		
