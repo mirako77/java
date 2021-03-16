@@ -5,19 +5,18 @@
 <head>
 	<title>Spring4 POC</title>
 	<!-- CSS Ressources -->
-	<spring:url value="/app/static/css/main.css" var="mainCss" />
+	<spring:url value="/static/cust/main.css" var="mainCss" />
 	<spring:url value="/app/static/css/bootstrap.min.css" var="bootstrapCss" />
 	<link href="${bootstrapCss}" rel="stylesheet" />
 	<link href="${mainCss}" rel="stylesheet" />
 	
 	<!-- JS Ressources -->
-	<spring:url value="/app/static/js/jquery_1_11_2.min.js" var="jquerymin" />
+	<spring:url value="/app/static/js/jquery.min.js" var="jquerymin" />
 	<spring:url value="/app/static/js/bootstrap.min.js" var="bootstrapJs" />
-	<spring:url value="/app/static/js/main.js" var="myJs" />
+	<spring:url value="/static/cust/main.js" var="myJs" />
 	<script src="${jquerymin}"></script>
 	<script src="${bootstrapJs}"></script>
 	<script src="${myJs}"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
 </head>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,34 +43,6 @@
 		</p>
 	</div>
 </div>
-
-
-<!-- <div class="container">
-
-	<div class="row">
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>ABC</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details</a>
-			</p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>ABC</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details</a>
-			</p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>ABC</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details</a>
-			</p>
-		</div>
-	</div> -->
-
 
 	<hr>
 	<footer>
