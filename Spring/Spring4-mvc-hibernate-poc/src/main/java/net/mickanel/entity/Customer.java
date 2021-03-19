@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 import org.hibernate.annotations.Index;
 
@@ -23,7 +24,10 @@ public class Customer {
 	}
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.IDENTITY) // PK Géré par la Base
+//	@GeneratedValue(strategy=GenerationType.TABLE, generator = "CUSTOMER_SEQ")
+//	@TableGenerator (name = "CUSTOMER_SEQ", pkColumnName = "SEQ_NAME",
+//							valueColumnName = "NEXT_VAL", allocationSize = 1) 
 	private long customerId;
 	
 	@SuppressWarnings("deprecation")

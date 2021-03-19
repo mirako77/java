@@ -25,7 +25,8 @@
 							placeholder="Enter Country" required>
 					</div>
 				</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="cancel" class="btn btn-cancel">Cancel</button>
+					<button type="submit" class="btn btn-success">Submit</button>
 			</form>
   	
   	</div>

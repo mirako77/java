@@ -38,13 +38,14 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	@Transactional
-	public Customer updateCustomer(long customerId,String customerName, String country) {
+	public Customer updateCustomer(long customerId,String customerName, String country, LocalDate createdDate) {
 		
 		logger.debug(customerName, "Customer Service Update invoked:");
 		Customer customer  = new Customer();
 		customer.setCustomerId(customerId);
 		customer.setCountry(country);
 		customer.setCustomerName(customerName);
+		customer.setCreatedDate(createdDate);
 		customer.setUpdateDate(LocalDateTime.now());
 		customer = customerDAO.updateCustomer(customer);
 		return customer;
@@ -71,6 +72,5 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		return true;
 	}
-
 
 }

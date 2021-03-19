@@ -1,5 +1,6 @@
 package net.mickanel.ui;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,15 +48,6 @@ public class MarketController {
 		return model;
 	}
 	
-	@GetMapping("/editCustomerView/{customerId}")
-	public ModelAndView getEditCustomerForm(@PathVariable("customerId") String customerId){
-		
-		ModelAndView model  = new ModelAndView("editCustomer");
-		Customer cus = customerService.getCustomer(Long.parseLong(customerId));
-		model.addObject("customer", cus);
-		return model;
-	}
-	
 	@GetMapping("/deleteCustomer/{customerId}")
 	@ExceptionHandler({SpringException.class})
 	public ModelAndView deleteCustomer(@PathVariable("customerId") String customerId){
@@ -76,8 +68,16 @@ public class MarketController {
 		return model;
 	}
 	
+	@GetMapping("/editCustomerView/{customerId}")
+	public ModelAndView getEditCustomerForm(@PathVariable("customerId") String customerId){
+		
+		ModelAndView model  = new ModelAndView("editCustomerForm");
+		Customer cus = customerService.getCustomer(Long.parseLong(customerId));
+		model.addObject("customer", cus);
+		return model;
+	}
 	
-	@PostMapping(value="/editCustomer")
+	@PostMapping(value="/editCustomerAction")
 	public ModelAndView editCustomer(HttpServletRequest request,HttpServletResponse response){
 		
 		ModelAndView model = new ModelAndView();
@@ -85,10 +85,11 @@ public class MarketController {
 		String customerId = request.getParameter("customerId");
 		String name = request.getParameter("name");
 		String country = request.getParameter("country");
+		LocalDate createdDate = LocalDate.parse(request.getParameter("createdDate"));
 		logger.info("Adding customer with name:"+name);
-		Customer customer = customerService.updateCustomer(Long.parseLong(customerId),name, country);
+		Customer customer = customerService.updateCustomer(Long.parseLong(customerId),name, country, createdDate);
 		if(customer!=null){
-			model.addObject("saveSuccess", "Customer Added SuccessFully:"+customer.getCustomerName());
+			model.addObject("saveSuccess", "Customer Updates SuccessFully: "+customer.getCustomerName());
 		}else{
 			model.addObject("saveError", "Customer creation failed");
 		}
@@ -114,7 +115,7 @@ public class MarketController {
 		
 		Customer customer = customerService.addCustomer(name, country);
 		if(customer!=null){
-			model.addObject("saveSuccess", "Customer Added SuccessFully:"+customer.getCustomerName());
+			model.addObject("saveSuccess", "Customer Added SuccessFully: "+customer.getCustomerName());
 		}else{
 			model.addObject("saveError", "Customer creation failed");
 		}
